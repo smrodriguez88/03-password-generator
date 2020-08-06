@@ -10,17 +10,17 @@ const spclChrString = ("~!@#$%^&*()_+`-=[]{};':,.<>?|");
 // Prompter function to initiate prompts to user
 function prompter(){
   // Start password length choice
-  let passLengthChoice = parseInt(prompt("Choose password length between 8 - 128"));
-  // Check if passLengthChoice is valid, while not valid continue asking for valid input
-  while (passLengthChoice < 8 || passLengthChoice > 128){
+  var passLengthChoice = parseInt(prompt("Choose password length between 8 - 128"));
+  // Check if passLengthChoice is valid and is between 8 - 128, while not valid continue asking for valid input
+  while (passLengthChoice < 8 || passLengthChoice > 128 || isNaN(passLengthChoice)){
     passLengthChoice = parseInt(prompt("Invalid password length chosen, please choose password length between 8 - 128"));
   }
   
   // Start password char choice
-  let lowerCaseChoice = confirm("Would you like to use Lower Case characters?");
-  let upperCaseChoice = confirm("Would you like to use Upper Case characters?");
-  let numericChoice = confirm("Would you like to user Numeric characters?");
-  let specialCharChoice = confirm("Would you like you like to use Special characters?");
+  var lowerCaseChoice = confirm("Would you like to use Lower Case characters?");
+  var upperCaseChoice = confirm("Would you like to use Upper Case characters?");
+  var numericChoice = confirm("Would you like to user Numeric characters?");
+  var specialCharChoice = confirm("Would you like you like to use Special characters?");
   // Check if at least 1 Char selection has been made, if not continue asking for valid input
   while ((!lowerCaseChoice) && (!upperCaseChoice) && (!numericChoice) && (!specialCharChoice)){
     alert("No password character selection made, please choose at least 1 character type to include in your password")
